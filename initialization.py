@@ -26,7 +26,7 @@ def get_connection(isolation_level_str: str):
 
 
 def reset_database():
-    conn = get_connection("READ UNCOMMITTED")
+    conn = get_connection("SERIALIZABLE")
     try:
         with conn.cursor() as cur:
             cur.execute("TRUNCATE accounts")
