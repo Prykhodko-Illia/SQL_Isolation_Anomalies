@@ -18,10 +18,11 @@ def non_repeatable_read():
 
             tx_2_read.wait()
 
-            update_balance(conn, "Alice", -400, f"Tx1-{conn_str}")
             update_balance(conn, "Bob", 400, f"Tx1-{conn_str}")
 
             conn.commit()
+            print(f"\n[Tx1-{conn_str}] Transaction 1 commited.")
+
             tx_1_update.set()
 
 
