@@ -6,4 +6,4 @@ if __name__ == "__main__":
     pass
     # dirty_read()
     # non_repeatable_read()
-    # deadlock()
+    deadlock()
